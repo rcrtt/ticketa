@@ -1,0 +1,21 @@
+body {
+            font-family: Arial, sans-serif;
+        }
+.table-container {
+            margin: 20px;
+        }
+.table {
+            border-collapse: collapse;
+        }
+.table th,.table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+.table th {
+            background-color: #f0f0f0;
+        }
+.btn-edit,.btn-delete {
+            margin: 5px;
+        }
+        

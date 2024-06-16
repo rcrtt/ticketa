@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Ticketa</title>
+
+  <!-- Custom styles for this template -->
+  <link th:href="@{/css/usuario/home.css}" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+	<!-- HTML Code -->
+<section class="container">
+  <h1>Tickets de Trabajo</h1>
+  <div class="row" th:each="t: ${tickets}">
+    <article class="card fl-left">
+      <section class="date">
+        <time datetime="2024-06-02">
+          <span>02</span><span> jun</span>
+        </time>
+      </section>
+      <section class="card-cont">
+        # <p class="ticketId" th:text="${t.id}"></p>
+        <h3 th:text="${t.titulo}"></h3>
+        <div class="even-date">
+          <i class="bi bi-ticket"></i>
+          <time>
+            Fecha de Creación: <p th:text="${t.fecha_creacion}"></p>
+            Fecha límite: <p th:text="${t.fecha_limite}"></p>
+            
+            <span>Hora de Creación: 08:00 am</span>
+          </time>
+        </div>
+        <div class="even-info">
+          <i class="fa fa-map-marker"></i>
+          <p th:text="${t.descripcion}">
+            Descripción del Trabajo: 
+          </p>
+        </div>
+        <a th:href="@{/ticket/detalleTicket/{id} (id=${t.id})} " class="btn btn-primary">Ver Detalles</a>
+      </section>
+    </article>
+    <!-- Add more tickets here -->
+  </div>
+  
+  <a th:href="@{/agregarTicket}" class="btn btn-primary">
+            <i class="material-icons" style="font-size:120px">add_circle</i>
+       </a>
+  
+</section>
+
+  </body>
+
+  </html>

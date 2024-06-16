@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Ticketa</title>
+
+  <!-- Custom styles for this template -->
+  <link th:href="@{/css/usuario/aggTicket.css}" rel="stylesheet">
+  
+
+</head>
+
+<body>
+
+
+
+<form th:action="@{/ticket/save}" method="post">
+        <label for="titulo">Título:</label>
+        <input id="titulo" type="text" placeholder="Título de la página" name="titulo">
+
+        <label for="textarea">Descripción:</label>
+        <textarea id="textarea" rows="10" cols="50" name="descripcion"></textarea>
+
+        <div id="combobox-container">
+            <label for="combobox1">Solicitante:</label>
+            <select id="combobox1" name="opcion1">
+                <option id="solicitante" th:each="user: ${usuarios}" th:value="${user.id}" th:text="${user.usuario}">Opción 1</option>
+            </select>
+        </div>
+        <div id="combobox-container">
+            <label for="combobox1">Encargado:</label>
+            <select id="combobox1" name="opcion1">
+                <option id="encargado" th:each="user: ${usuarios}" th:value="${user.id}" th:text="${user.usuario}">Opción 1</option>
+            </select>
+        </div>
+        <div id="combobox-container">
+            <label for="combobox1">Supervisor:</label>
+            <select id="combobox1" name="opcion1">
+                <option id="supervisor" th:each="user: ${usuarios}" th:value="${user.id}" th:text="${user.usuario}">Opción 1</option>
+            </select>
+        </div>
+
+        <button type="submit">Publicar</button>
+    </form>
+	
+
+
+  </body>
+
+  </html>

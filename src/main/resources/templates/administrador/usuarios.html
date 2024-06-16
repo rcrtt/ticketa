@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuarios</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Custom styles for this template -->
+    <link th:href="@{/css/administrador/usuarios.css}" rel="stylesheet">
+</head>
+<body>
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Usuario</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody th:each="user: ${usuarios}">
+                <tr>
+                    <td th:text="${user.nombre}">John</td>
+                    <td th:text="${user.apellido}">Doe</td>
+                    <td th:text="${user.usuario}">johndoe@example.com</td>
+                    <td>
+                        <button class="btn btn-primary btn-edit">Editar</button>
+                        <button class="btn btn-danger btn-delete">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a th:href="@{/}"><button class="btn btn-success btn-add">Agregar usuario</button></a>
+    </div>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

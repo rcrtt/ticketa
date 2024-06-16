@@ -1,0 +1,32 @@
+body {
+	font-family: Arial, sans-serif;
+}
+
+
+#titulo {
+	font-size: 30px;
+	margin-bottom: 50px;
+	display: block;
+}
+
+#textarea {
+	width: 50%;
+	height: 200px;
+	margin-bottom: 50px;
+	padding: 10px;
+	font-size: 16px;
+	display: block;
+}
+
+#combobox-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	display: block;
+	}
+
+select {
+	margin-bottom: 10px;
+	margin-top: 10px;
+	display: block;
+}
